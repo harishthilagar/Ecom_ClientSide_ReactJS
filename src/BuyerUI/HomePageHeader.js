@@ -13,7 +13,7 @@ export default class HomePageHeader extends Component {
                             <p><FaSearch size="20px"></FaSearch></p>
                         </div>
                         <div className="login-btn">
-                            <p><NavLink to="/signin" className="login-txt">Login</NavLink></p>
+                            <NavLink to="/signin" className="login-txt">Login</NavLink>
                         </div>
                 </div>
             </React.Fragment>
