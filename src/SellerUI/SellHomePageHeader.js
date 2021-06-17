@@ -16,7 +16,7 @@ export default class HomePageHeader extends Component {
                             <NavLink to="/signin" className="login-txt">Login</NavLink>
                         </div>
                         <div className="login-btn">
-                            <NavLink to="/seller/home" target="_blank" className="login-txt">Seller</NavLink>
+                            <NavLink to="/product" target="_blank" className="login-txt">Add Product</NavLink>
                         </div>
                 </div>
             </React.Fragment>

@@ -11,6 +11,7 @@ class API{
         return await axios.get(url)
     }
 
+
     async deleteAPI(url,data){
         let endpoint =this.baseurl+url
         return await axios.delete(endpoint,data) 

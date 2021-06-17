@@ -37,7 +37,6 @@ export default class Signin extends Component {
                 userDetail: { ...this.state.userDetail, [event.target.name]: event.target.value }
             })
         }
-        console.log(this.state);
     }
 
     async signIn() {
@@ -57,7 +56,7 @@ export default class Signin extends Component {
                 enterPassword: <p style={{ color: "red" }}>enter the password</p>
             })
         }
-        else if(email.match(/[^A-Za-z0-9@_-]/)){
+        else if(email.match(/[^A-Za-z0-9@._-]/)){
             this.setState({
                 errmsg:<p className="warn-msg">Your user name contains special characters</p>
             })
@@ -65,7 +64,6 @@ export default class Signin extends Component {
         else {
             let url = "/buyer/user/signin"
             let response = await API.postAPI(url, this.state.userDetail)
-            console.log(response);
             if (response.data.token === null) {
                 this.setState({
                     userExisting: alert("user not exist")
@@ -75,7 +73,7 @@ export default class Signin extends Component {
                 if (this.state.keepsignin === true) {
                     localStorage.setItem("my-ecom-token", response.data.token)
                 }
-                this.props.history.push('/signup')
+                this.props.history.push('/home')
             }
         }
     }
