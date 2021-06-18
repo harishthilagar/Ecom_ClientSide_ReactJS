@@ -8,7 +8,7 @@ class API{
 
     async getAPI(url){
         let endpoint =this.baseurl+url
-        return await axios.get(url)
+        return await axios.get(endpoint)
     }
 
 

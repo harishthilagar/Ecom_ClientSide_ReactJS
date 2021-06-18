@@ -53,6 +53,55 @@
   border: 3px;
   margin-top: 15px;
 }
+.login-btn>.cart{
+  display: flex;
+}
+.login-btn>.cart>i{
+  position: relative;
+  top:2px;
+  left: 8px;
+}
+.cart-left{
+  position: relative;
+  right: 50px;
+}
+.login-tooltip{
+  background-color:white;
+  border-radius: 5px;
+  display: grid;
+  width: 230px;
+  position: relative;
+  top:17px;
+  right: 50px;
+  visibility: hidden;
+}
+#log-bt:hover > .login-tooltip{
+  visibility: visible;
+}
+.log-tip-nav{
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+  border-bottom:1px solid rgba(141, 141, 141, 0.63);
+
+}
+.log-tip-nav>span:last-child{
+  color: #2874f0;
+}
+.log-tip-nav>span:last-child:hover{
+  text-decoration:underline;
+}
+.log-tip-nav:not(.nav1):hover{
+  background-color: #e0e0e0b7;
+}
+.nav1{
+  display: flex;
+  font-weight: 500;
+  justify-content: space-between;
+}
+.nav4{
+  border-bottom:none ;
+}
 .warn-msg{
   width: 82%;
   background-color: rgb(231, 233, 96);
@@ -60,6 +109,7 @@
   margin-left: 8%;
   font-weight: 400;
   border-radius: 5px;
+  overflow: hidden;
 }
 /* signin page  */
 
@@ -67,16 +117,18 @@
   width: 50%;
   margin-left: 25%;
   margin-top: 10vh;
-  height: 80vh;
+  /* height: 80vh; */
   background-color: white;
 }
 
 .signin-container{
   display: flex;
+  overflow-y: scroll;
 }
 .signin-div0{
   flex-basis: 40%;
   background-color: #2874f0; 
+
 }
 .signin-div0>h2{
   color: white;
@@ -92,7 +144,8 @@
 .signin-div1{
   background-color:white;
   flex-basis: 60%;
-  height: 80vh;
+  /* height: 80vh; */
+  padding-bottom:30px ;
   text-align: center;
 }
 .signin-div2{
@@ -271,3 +324,22 @@ body{
   top:6.6px;
 }
 
+/* HomePageHeaderLogin */
+.hphl-cart{
+  margin-left:25%;
+}
+
+.cg-icon{
+  font-size: 20px;
+  text-decoration: none;
+  color:#2874f0 ;
+  background-color: white;
+  height: 30px;
+  width:50% ;
+  border-radius: 100px;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  border: 3px;
+  margin-top: 15px;
+}

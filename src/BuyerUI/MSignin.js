@@ -17,7 +17,8 @@ export default class Signin extends Component {
             enterMail: "",
             enterPassword:"",
             isModal:true,
-            errmsg:""
+            errmsg:"",
+            incrtPass:"",
         }
     }
 
@@ -43,7 +44,8 @@ export default class Signin extends Component {
         this.setState({
             userExisting: "",
             enterMail: "",
-            enterPassword:""
+            enterPassword:"",
+            incrtPass:""
         })
         const { email, password } = this.state.userDetail
         if (email === "") {
@@ -66,14 +68,17 @@ export default class Signin extends Component {
             let response = await API.postAPI(url, this.state.userDetail)
             if (response.data.token === null) {
                 this.setState({
-                    userExisting: alert("user not exist")
+                    incrtPass: <p style={{ color: "red" }}>Incorrect username or password</p> 
                 })
             } else {
+                localStorage.removeItem("my-ecom-token")
+                sessionStorage.removeItem("my-ecom-token")
                 sessionStorage.setItem("my-ecom-token", response.data.token)
                 if (this.state.keepsignin === true) {
                     localStorage.setItem("my-ecom-token", response.data.token)
                 }
                 this.props.history.push('/home')
+                window.parent.location.reload()
             }
         }
     }
@@ -104,6 +109,7 @@ export default class Signin extends Component {
                         <input type="password" name="password" onChange={this.setUserDetail} placeholder="enter password"></input>
                         {this.state.enterPassword}
                     </div>
+                    {this.state.incrtPass}
                     <div className="signin-div3">
                         <input type="checkbox" name="keepSignin" onChange={this.setUserDetail}></input><span>Keep Me Signed In</span>
                     </div>
@@ -112,7 +118,7 @@ export default class Signin extends Component {
                     </div>
                     {this.state.userExisting}
                     <div className="signin-div4">
-                        <NavLink className="sig-d4-nav" to="/signup">New User ? Create an account</NavLink>
+                        <NavLink className="sig-d4-nav" to="/msignup">New User ? Create an account</NavLink>
                     </div>
                 </div>
             </div>

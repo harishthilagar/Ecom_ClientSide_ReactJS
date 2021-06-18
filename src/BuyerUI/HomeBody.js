@@ -43,7 +43,7 @@ render() {
             <p>{this.captilizepName(value)}</p>
             <img src={value.productImage}></img>
             <div className="rupee-cont">
-                <p className="fi-price"><i><FaRupeeSign /></i>{(value.productPrice - ((value.productPrice) * .01) * (value.productOffer))}</p>
+                <p className="fi-price"><i><FaRupeeSign /></i>{parseInt((value.productPrice - ((value.productPrice) * .01) * (value.productOffer)))}</p>
                 {value.productOffer>0 ? <p className="pr-price"><span><i><FaRupeeSign /></i>{value.productPrice}</span><span>%{value.productOffer}off</span></p>:<p className="pr-price1"><span>No offers</span></p>}
             </div>
             <p><span>AddToCart</span></p>
